@@ -11,7 +11,7 @@ body {
 }
 .col {
 	flex: 1;
-
+	max-width: 20vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -40,4 +40,59 @@ body {
 .col h2:hover {
 	background: rgba(0, 0, 0, 0.1);
 	cursor: pointer;
+}
+.fa-arrows-rotate {
+	visibility: hidden;
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 2rem;
+}
+[data-type="refresh"] {
+	/* visibility: hidden; */
+	background: transparent;
+	transition: 0.3s all;
+}
+.fa-arrows-rotate:hover {
+	background: rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transform: rotate(180deg);
+}
+/* @keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+} */
+.copy-info {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 85%;
+	text-align: center;
+	font-size: 1.5rem;
+	background: rgba(255, 255, 255, 0.7);
+	width: 250px;
+	height: 30px;
+	border-radius: 10px;
+	visibility: hidden;
+}
+@media screen and (max-width: 600px) {
+	.fa-arrows-rotate {
+		visibility: visible;
+		padding: 10px;
+	}
+	[data-type="refresh"] {
+		visibility: visible;
+	}
+	.col {
+		flex: 1;
+	}
+	h2 {
+		font-size: 1rem;
+	}
 }
