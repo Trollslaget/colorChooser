@@ -1,5 +1,5 @@
 const cols = document.querySelectorAll(".col");
-
+const copyInfo = document.querySelector(".copy-info");
 document.addEventListener("keydown", (event) => {
 	event.preventDefault();
 	if (event.code.toLowerCase() === "space") {
@@ -19,6 +19,12 @@ document.addEventListener("click", (event) => {
 		node.classList.toggle("fa-lock");
 	} else if (type === "copy") {
 		copyToClipboard(event.target.textContent);
+		copyInfo.style.visibility = "visible";
+		setTimeout(() => {
+			copyInfo.style.visibility = "hidden";
+		}, 1600);
+	} else if (type === "refresh") {
+		setRandomColors();
 	}
 });
 
