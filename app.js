@@ -1,5 +1,6 @@
 const cols = document.querySelectorAll(".col");
 const copyInfo = document.querySelector(".copy-info");
+const spin = document.querySelector(".fa-arrows-rotate");
 document.addEventListener("keydown", (event) => {
 	event.preventDefault();
 	if (event.code.toLowerCase() === "space") {
@@ -10,7 +11,6 @@ document.addEventListener("keydown", (event) => {
 document.addEventListener("click", (event) => {
 	const type = event.target.dataset.type;
 	if (type === "lock") {
-	
 		const node =
 			event.target.tagName.toLowerCase() === "i"
 				? event.target
@@ -25,6 +25,10 @@ document.addEventListener("click", (event) => {
 		}, 1600);
 	} else if (type === "refresh") {
 		setRandomColors();
+
+		spin.style.transform
+			? (spin.style.transform = null)
+			: (spin.style.transform = "rotate(360deg)");
 	}
 });
 

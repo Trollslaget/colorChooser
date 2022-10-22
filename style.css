@@ -51,21 +51,23 @@ body {
 [data-type="refresh"] {
 	/* visibility: hidden; */
 	background: transparent;
-	transition: 0.3s all;
+	transition: 0.5s all;
 }
 .fa-arrows-rotate:hover {
 	background: rgba(0, 0, 0, 0.1);
 	cursor: pointer;
-	transform: rotate(180deg);
+	/* transform: rotate(180deg); */
 }
-/* @keyframes spin {
+
+@keyframes spinning {
 	from {
 		transform: rotate(0deg);
 	}
 	to {
 		transform: rotate(360deg);
 	}
-} */
+}
+
 .copy-info {
 	position: absolute;
 	margin-left: auto;
